@@ -1,20 +1,26 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:my_shop_app/Widgets/HomePage/BottomNavigationBar.dart';
-import 'package:my_shop_app/Widgets/HomePage/MyHomePageBody.dart';
 
+import 'Widgets/HomePage/BottomNavigationBar.dart';
 
+class Shoppingcart extends StatefulWidget {
+  @override
+  _ShoppingcartState createState() => _ShoppingcartState();
+}
 
-class MyHomePage extends StatelessWidget {
+class _ShoppingcartState extends State<Shoppingcart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 70,
         backgroundColor: Colors.grey[200],
         elevation: 0,
-        leading: Image.asset("assets/images/hamburger.png"),
+        title: Text(
+          'Shopping Cart',
+          style: TextStyle(color: Colors.black, fontSize: 23),
+        ),
         actions: [
           Container(
             decoration: BoxDecoration(
@@ -26,7 +32,6 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: MyHomePageBody(),
       bottomNavigationBar: MyHomeBottomNavBar(),
     );
   }

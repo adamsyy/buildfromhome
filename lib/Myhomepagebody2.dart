@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my_shop_app/profile.dart';
 
 import '../../Screens/DetailsPage.dart';
 import 'package:my_shop_app/Myhomepage2.dart';
 import 'package:my_shop_app/myhomepage3.dart';
 
-class MyHomePageBody extends StatelessWidget {
+import 'Screens/MyHomePage.dart';
+import 'profile.dart';
+
+class MyHomePageBody2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -60,7 +62,7 @@ class BottomBodyItems extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                "Holiday Special",
+                "Cheapest Deals",
                 style: TextStyle(fontSize: 24),
               ),
               Spacer(),
@@ -76,35 +78,24 @@ class BottomBodyItems extends StatelessWidget {
           child: Row(
             children: [
               Bottomileitems(
-                x: 6,
-                text: 'Skudgear for men',
-                price: 9,
+                x: 15,
+                text: 'Mens Hankerchief',
+                price: 08,
+                idk:11,
+              ),
+              Bottomileitems(
+                x: 16,
+                text: 'Cotton Loafers',
+                price:07,
                 idk: 20,
               ),
               Bottomileitems(
-                x: 7,
-                text: 'Knitted Gloves',
-                price: 22,
-                idk: 10,
-              ),
-              Bottomileitems(
-                x: 8,
-                text: 'Slouchy Cap',
+                x: 17,
+                text: 'Nike React Shorts',
                 price: 12,
-                idk: 15,
+                idk: 22,
               ),
-              Bottomileitems(
-                x: 9,
-                text: 'Calf socks',
-                price: 39,
-                idk: 25,
-              ),
-              Bottomileitems(
-                x: 10,
-                text: 'Winter hat',
-                price: 29,
-                idk: 10,
-              ),
+
             ],
           ),
         )
@@ -198,7 +189,7 @@ class HeadingText extends StatelessWidget {
             height: 5,
             width: 5,
             decoration:
-                BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+            BoxDecoration(color: Colors.black, shape: BoxShape.circle),
           )
       ],
     );
@@ -234,24 +225,26 @@ class HeadingTopBar extends StatelessWidget {
           children: [
             Pinkbutton(
               text: "Clothing",
-              isSelected: true,
-              onPressed: () {},
-            ),
-            Pinkbutton(
-              text: "Accesories",
               isSelected: false,
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MyHomePage2();
+                  return MyHomePage();
                 }));
+              },
+            ),
+            Pinkbutton(
+              text: "Accesories",
+              isSelected: true,
+              onPressed: () {
+
               },
             ),
             Pinkbutton(
               text: "Extras",
               isSelected: false,
               onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder: (context){
-                 return MyHomePage3();}));
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return MyHomePage3();}));
               },
             ),
           ],
@@ -275,11 +268,11 @@ class MyCandelsList extends StatelessWidget {
           SizedBox(
             width: 20,
           ),
-          buildColumnWithRow("1", "Gap Hoodie", "29", context),
-          buildColumnWithRow("2", "Half Sleeve Polo", "23", context),
-          buildColumnWithRow("3", "Winter Levis wear", "40", context),
-          buildColumnWithRow("4", "Polo Regular Fit", "60", context),
-          buildColumnWithRow("5", "Polo Lt Edition", "60", context),
+          buildColumnWithRow("11", "Kyco Smartwatch", "99", context),
+          buildColumnWithRow("12", "Skagen Mens watch", "139", context),
+          buildColumnWithRow("13", "Dyme Necklace", "40", context),
+          buildColumnWithRow("14", "Mature Bag", "60", context),
+
         ],
       ),
     );
@@ -379,7 +372,7 @@ class Bottomileitems extends StatelessWidget {
           title: text,
           price: price.toString(),
           context: context,
-            img: x.toString(),
+          img: x.toString(),
         );
       }));
     },

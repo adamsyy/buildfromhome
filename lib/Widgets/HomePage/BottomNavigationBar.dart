@@ -1,5 +1,9 @@
-
 import 'package:flutter/material.dart';
+import 'package:my_shop_app/Screens/MyHomePage.dart';
+import 'package:my_shop_app/profile.dart';
+import 'MyHomePageBody.dart';
+import 'package:my_shop_app/shoppingcart.dart';
+
 
 class MyHomeBottomNavBar extends StatelessWidget {
   @override
@@ -21,11 +25,39 @@ class MyHomeBottomNavBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buildContainerBottomNav(Icons.person),
-            buildContainerBottomNav(Icons.shopping_bag),
-            buildContainerBottomNav(Icons.home, isSelected: true),
-            buildContainerBottomNav(Icons.favorite),
-            buildContainerBottomNav(Icons.settings),
+            IconButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return Shoppingcart();
+                }));
+              },
+              icon: Icon(
+                Icons.shopping_bag,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return MyHomePage();
+                }));
+              },
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return Profile();
+                }));
+              },
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.black,
+              ),
+            ),
           ],
         ),
       ),

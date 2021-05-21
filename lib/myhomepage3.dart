@@ -1,11 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_shop_app/Widgets/HomePage/BottomNavigationBar.dart';
 import 'package:my_shop_app/Widgets/HomePage/MyHomePageBody.dart';
+import 'myhomepagebody3.dart';
 
-
-
-class MyHomePage extends StatelessWidget {
+class MyHomePage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +24,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: MyHomePageBody(),
+      body: MyHomePageBody3(),
       bottomNavigationBar: MyHomeBottomNavBar(),
     );
   }

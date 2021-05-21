@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my_shop_app/profile.dart';
 
 import '../../Screens/DetailsPage.dart';
 import 'package:my_shop_app/Myhomepage2.dart';
 import 'package:my_shop_app/myhomepage3.dart';
 
-class MyHomePageBody extends StatelessWidget {
+import 'Screens/MyHomePage.dart';
+
+
+class MyHomePageBody3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -60,7 +62,7 @@ class BottomBodyItems extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                "Holiday Special",
+                "Most Bought Items",
                 style: TextStyle(fontSize: 24),
               ),
               Spacer(),
@@ -76,35 +78,24 @@ class BottomBodyItems extends StatelessWidget {
           child: Row(
             children: [
               Bottomileitems(
-                x: 6,
-                text: 'Skudgear for men',
-                price: 9,
+                x: 21,
+                text: 'Plain black Mask',
+                price: 5,
+                idk: 21,
+              ),
+              Bottomileitems(
+                x: 22,
+                text: 'N95 Mask',
+                price: 10,
+                idk: 17,
+              ),
+              Bottomileitems(
+                x: 23,
+                text: 'Fastrack Reflex3',
+                price: 5,
                 idk: 20,
               ),
-              Bottomileitems(
-                x: 7,
-                text: 'Knitted Gloves',
-                price: 22,
-                idk: 10,
-              ),
-              Bottomileitems(
-                x: 8,
-                text: 'Slouchy Cap',
-                price: 12,
-                idk: 15,
-              ),
-              Bottomileitems(
-                x: 9,
-                text: 'Calf socks',
-                price: 39,
-                idk: 25,
-              ),
-              Bottomileitems(
-                x: 10,
-                text: 'Winter hat',
-                price: 29,
-                idk: 10,
-              ),
+
             ],
           ),
         )
@@ -198,7 +189,7 @@ class HeadingText extends StatelessWidget {
             height: 5,
             width: 5,
             decoration:
-                BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+            BoxDecoration(color: Colors.black, shape: BoxShape.circle),
           )
       ],
     );
@@ -234,8 +225,12 @@ class HeadingTopBar extends StatelessWidget {
           children: [
             Pinkbutton(
               text: "Clothing",
-              isSelected: true,
-              onPressed: () {},
+              isSelected: false,
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return MyHomePage();
+                }));
+              },
             ),
             Pinkbutton(
               text: "Accesories",
@@ -248,10 +243,9 @@ class HeadingTopBar extends StatelessWidget {
             ),
             Pinkbutton(
               text: "Extras",
-              isSelected: false,
+              isSelected: true,
               onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder: (context){
-                 return MyHomePage3();}));
+
               },
             ),
           ],
@@ -275,11 +269,10 @@ class MyCandelsList extends StatelessWidget {
           SizedBox(
             width: 20,
           ),
-          buildColumnWithRow("1", "Gap Hoodie", "29", context),
-          buildColumnWithRow("2", "Half Sleeve Polo", "23", context),
-          buildColumnWithRow("3", "Winter Levis wear", "40", context),
-          buildColumnWithRow("4", "Polo Regular Fit", "60", context),
-          buildColumnWithRow("5", "Polo Lt Edition", "60", context),
+          buildColumnWithRow("18", "Onion Hair Oil", "19", context),
+          buildColumnWithRow("19", "Beardo Oil", "33", context),
+          buildColumnWithRow("20", "Bajaj Zero Grey", "29", context),
+
         ],
       ),
     );
@@ -379,7 +372,7 @@ class Bottomileitems extends StatelessWidget {
           title: text,
           price: price.toString(),
           context: context,
-            img: x.toString(),
+          img: x.toString(),
         );
       }));
     },
