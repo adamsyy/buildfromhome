@@ -5,14 +5,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:my_shop_app/shoppingcart.dart';
 
 final _auth=FirebaseAuth.instance;
-final _firestore=Firestore.instance;
+final _firestore=FirebaseFirestore.instance;
 Shoppingcart email1=Shoppingcart();
 
 String pop;
 Future<String> showname()async {
-  final _user = await _auth.currentUser();
-  String x=_user.email;
-  print(x);
+  final _user =  _auth.currentUser;
+  String x=_user.uid;
+
   return x;
 
 }
@@ -76,7 +76,7 @@ class BottomCart extends StatelessWidget {
  String pop;
 
  Future<String> getperson()async{
-   final _user = await _auth.currentUser();
+   final _user = await _auth.currentUser;
    String x=_user.email;
    return x;
    print(x);
@@ -101,16 +101,17 @@ class BottomCart extends StatelessWidget {
           ),
           FlatButton.icon(
             onPressed: () async{
-                   poo();
-                    print(pop);
+              String uid=await showname();
+                   print('//////////////////////');
+                    print(uid);
 
               print('$content');
              print('$amount');
-             _firestore.collection('cart1').add({
+             _firestore.collection(uid).add({
                'content':content,
                'amount':amount,
                'image':x,
-                'email':pop,
+
              });
 
 

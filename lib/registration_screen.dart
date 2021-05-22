@@ -16,7 +16,7 @@ String password='';
 class RegistrationScreen extends StatefulWidget {
 
   Future<String> shownames()async {
-    final _user = await _auth.currentUser();
+    final _user = await _auth.currentUser;
     String x=_user.email;
 
     print(x);
@@ -117,6 +117,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           email: email, password: password);
 
                       if(newuser!=null){
+
                       Navigator.push(context,
                       MaterialPageRoute(builder: (context) {
                       return MyHomePage();

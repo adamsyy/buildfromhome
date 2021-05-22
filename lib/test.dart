@@ -5,20 +5,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
-class Shoppingcart extends StatefulWidget {
+class test extends StatefulWidget {
 
   @override
-  _ShoppingcartState createState() => _ShoppingcartState();
+  _testState createState() => _testState();
 }
 
-class _ShoppingcartState extends State<Shoppingcart> {
+class _testState extends State<test> {
   final _auth = FirebaseAuth.instance;
   String pop='';
   Future<String> showname()async {
     final _user =  _auth.currentUser;
-    String uid=_user.uid;
-
-    return uid;
+    String x=_user.email;
+    print(x);
+    return x;
 
   }
 
@@ -30,8 +30,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
     String pp1=await showname();
 
     pop=pp1;
-    print('////////////////////////////////');
-    print(pop);
+
   }
 
 
@@ -40,8 +39,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
   void initState() {
 
     super.initState();
-   poo();
-
+    poo();
   }
 
   final  _firestore =FirebaseFirestore.instance;
@@ -79,53 +77,38 @@ class _ShoppingcartState extends State<Shoppingcart> {
           ),
         ],
       ),
-
-
-
-
       body: Column(
         children: [
-          FutureBuilder(
-            future:showname(),
-            builder: (context,futuresnapshot) {
-              if(!futuresnapshot.hasData){
-                return CircularProgressIndicator();
-              }
-               return
-              StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-                  stream: _firestore.collection(futuresnapshot.data).snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.pinkAccent,
-                        ),
-                      );
-                    }
-                    final messages = snapshot.data.docs;
-                    List<MessageBubble> messageBubbles = [];
-                    for (var message in messages) {
-                      final messagecontent = message.data()['content'];
-                      final messageamount = message.data()['amount'];
-                      final messageimage = message.data()['image'];
-                      final messageBubble = MessageBubble(
-                          content: messagecontent,
-                          amount: messageamount,
-                          image: messageimage
-                      );
-                      messageBubbles.add(messageBubble);
-                    }
-                    return Expanded(
-                      child: ListView(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 20),
-                        children: messageBubbles,
-                      ),
-                    );
-                  });
-
-            }
-          ),
+          StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+              stream: _firestore.collection('cart1').snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.pinkAccent,
+                    ),
+                  );
+                }
+                final messages = snapshot.data.docs;
+                List<MessageBubble> messageBubbles = [];
+                for (var message in messages) {
+                  final messagecontent = message.data()['content'];
+                  final messageamount = message.data()['amount'];
+                  final messageimage = message.data()['image'];
+                  final messageBubble = MessageBubble(
+                      content: messagecontent,
+                      amount: messageamount,
+                      image:messageimage
+                  );
+                  messageBubbles.add(messageBubble);
+                }
+                return Expanded(
+                  child: ListView(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                    children: messageBubbles,
+                  ),
+                );
+              }),
         ],
       ),
       bottomNavigationBar: MyHomeBottomNavBar(),
@@ -137,7 +120,6 @@ class MessageBubble extends StatelessWidget {
   final String content;
   final String amount;
   final String image;
-
 
   MessageBubble({this.content, this.amount,this.image});
   @override

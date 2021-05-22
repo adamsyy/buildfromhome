@@ -14,7 +14,7 @@ registrationscreenimport.RegistrationScreen email2=registrationscreenimport.Regi
 String pop="To Weber Hanger";
 
 Future<String> showname()async {
-  final _user = await _auth.currentUser();
+  final _user = await _auth.currentUser;
   String x=_user.email;
    print(x);
 

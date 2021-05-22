@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:my_shop_app/Myhomepage2.dart';
 import 'package:my_shop_app/profile.dart';
 import 'package:my_shop_app/welcome_screen.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'Screens/MyHomePage.dart';
 
-void main() => runApp(MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 
+}
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
