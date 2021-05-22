@@ -16,7 +16,7 @@ String pop="To Weber Hanger";
 Future<String> showname()async {
   final _user = await _auth.currentUser();
   String x=_user.email;
-
+   print(x);
 
   if(x!=null) {
     List<String> y = [];

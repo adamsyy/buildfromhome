@@ -1,13 +1,46 @@
 import 'package:flutter/material.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_shop_app/shoppingcart.dart';
+
+final _auth=FirebaseAuth.instance;
+final _firestore=Firestore.instance;
+Shoppingcart email1=Shoppingcart();
+
+String pop;
+Future<String> showname()async {
+  final _user = await _auth.currentUser();
+  String x=_user.email;
+  print(x);
+  return x;
+
+}
+
+
+
+//
+
+void  poo()async{
+  String pp1=await showname();
+
+  pop=pp1;
+
+}
+
+
+
+
 class BottomStackContainer extends StatelessWidget {
   BottomStackContainer({
     this.title,
     this.price,
+    this.img
   });
 
   final String title;
   final String price;
+  final String img;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +59,7 @@ class BottomStackContainer extends StatelessWidget {
         child: Column(
           children: [
             ContainerStackItem(title: title, price: price),
-            BottomCart(),
+            BottomCart(content: title,amount:price,x: img,pop:pop),
           ],
         ),
       ),
@@ -35,6 +68,22 @@ class BottomStackContainer extends StatelessWidget {
 }
 
 class BottomCart extends StatelessWidget {
+
+
+  String content;
+ String amount;
+ String x;
+ String pop;
+
+ Future<String> getperson()async{
+   final _user = await _auth.currentUser();
+   String x=_user.email;
+   return x;
+   print(x);
+ }
+
+  BottomCart({this.content,this.amount,this.x,this.pop});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +100,21 @@ class BottomCart extends StatelessWidget {
                 border: Border.all(color: Colors.grey), shape: BoxShape.circle),
           ),
           FlatButton.icon(
-            onPressed: () {},
+            onPressed: () async{
+                   poo();
+                    print(pop);
+
+              print('$content');
+             print('$amount');
+             _firestore.collection('cart1').add({
+               'content':content,
+               'amount':amount,
+               'image':x,
+                'email':pop,
+             });
+
+
+            },
             icon: Icon(Icons.shopping_bag_outlined, color: Colors.white),
             label: Text(
               "Add to Basket",

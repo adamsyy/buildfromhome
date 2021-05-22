@@ -23,7 +23,7 @@ class DetailsPage extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        BottomStackContainer(title: title, price: price),
+        BottomStackContainer(title: title, price: price,img: img,),
       ],
     ));
   }
