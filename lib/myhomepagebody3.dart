@@ -207,7 +207,7 @@ class HeadingTopBar extends StatelessWidget {
               width: 15,
             ),
             Text(
-              "Weber ",
+              "The ",
               style: TextStyle(fontSize: 32, letterSpacing: 1),
             ),
             Text(

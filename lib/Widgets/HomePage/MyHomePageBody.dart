@@ -216,11 +216,11 @@ class HeadingTopBar extends StatelessWidget {
               width: 15,
             ),
             Text(
-              "Weber ",
+              "The",
               style: TextStyle(fontSize: 32, letterSpacing: 1),
             ),
             Text(
-              "Hanger",
+              " Hanger",
               style: TextStyle(
                   fontSize: 32, fontWeight: FontWeight.bold, letterSpacing: 1),
             ),
@@ -277,9 +277,11 @@ class MyCandelsList extends StatelessWidget {
           ),
           buildColumnWithRow("1", "Gap Hoodie", "29", context),
           buildColumnWithRow("2", "Half Sleeve Polo", "23", context),
+
           buildColumnWithRow("3", "Winter Levis wear", "40", context),
           buildColumnWithRow("4", "Polo Regular Fit", "60", context),
           buildColumnWithRow("5", "Polo Lt Edition", "60", context),
+
         ],
       ),
     );

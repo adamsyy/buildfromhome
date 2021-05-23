@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_shop_app/payment.dart';
+import 'package:my_shop_app/paymentmanager.dart';
 import 'package:my_shop_app/shoppingcart.dart';
 
 final _auth=FirebaseAuth.instance;
@@ -92,12 +94,18 @@ class BottomCart extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            height: 50,
-            width: 50,
-            child: Icon(Icons.favorite_border),
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey), shape: BoxShape.circle),
+          GestureDetector(onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return Payment();
+            }));
+          },
+            child: Container(
+              height: 50,
+              width: 165,
+              child: Center(child: Text('Buy Now',style: TextStyle(color: Colors.white,fontSize: 20,letterSpacing: 1),)),
+              decoration: BoxDecoration(color: Colors.black,
+                  border: Border.all(color: Colors.grey), borderRadius: BorderRadius.circular(25)),
+            ),
           ),
           FlatButton.icon(
             onPressed: () async{
@@ -125,7 +133,7 @@ class BottomCart extends StatelessWidget {
             color: Colors.pink[100],
             shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width / 6,
+                horizontal: MediaQuery.of(context).size.width / 80,
                 vertical: 10),
           )
         ],

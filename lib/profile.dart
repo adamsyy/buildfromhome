@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_shop_app/Screens/MyHomePage.dart';
+import 'package:my_shop_app/return.dart';
+import 'package:my_shop_app/shoppingcart.dart';
 import 'package:my_shop_app/welcome_screen.dart';
 import 'login_screen.dart';
 import 'package:my_shop_app/Widgets/HomePage/BottomNavigationBar.dart';
@@ -134,13 +137,13 @@ class _ProfileState extends State<Profile> {
             thickness: 1,
             height: 1,
           ),
-          Cardprofile(text: 'View your cart'),
+          Cardprofile(text: 'View your cart',ontap: Shoppingcart(),),
 
-          Cardprofile(text: 'Home'),
+          Cardprofile(text: 'Home',ontap: MyHomePage(),),
           Cardprofile(
-            text: 'Returns',
+            text: 'Returns',ontap: Return(),
           ),
-          Cardprofile(text: 'Contact us'),
+
         ],
       ),
       bottomNavigationBar: MyHomeBottomNavBar(),
@@ -160,20 +163,27 @@ class _ProfileState extends State<Profile> {
 
 class Cardprofile extends StatelessWidget {
   String text;
-  Cardprofile({this.text});
+   Widget ontap;
+  Cardprofile({this.text,this.ontap});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(14.0),
       child: Container(
         child: Center(
-            child: Text(
+            child: GestureDetector(onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ontap;
+              }));
+            },
+              child: Text(
           '$text',
           style: TextStyle(
-              fontSize: 35,
-              fontWeight: FontWeight.w100,
-              fontStyle: FontStyle.italic),
-        )),
+                fontSize: 35,
+                fontWeight: FontWeight.w100,
+                fontStyle: FontStyle.italic),
+        ),
+            )),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(5.0),
@@ -185,7 +195,7 @@ class Cardprofile extends StatelessWidget {
             )
           ],
         ),
-        height: 100,
+        height: 150,
         width: 350,
       ),
     );

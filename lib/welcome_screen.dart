@@ -36,7 +36,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                     Center(
                       child: Text(
-                        '      Weber Hanger',
+                        '         The Hanger',
                         style: GoogleFonts.darkerGrotesque(
                           textStyle: TextStyle(
                               color: Colors.black,letterSpacing: 1,
