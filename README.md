@@ -1,5 +1,5 @@
 # buildfromhome
-[BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
+![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 
 ##Projectname
 The Hanger
@@ -12,7 +12,7 @@ It is a fashion shopping app. I used Razorpay to integrate payment within the ap
 BFH/rec9jRv7kQ6HUshJ0/2021
 
 ## Link to product walkthrough
-[link to video]
+[https://drive.google.com/file/d/1mj1DkKJpGr3RowjtX0CJyXE0Cf3K0MDq/view?usp=sharing]
 ## How it Works ?
 1. Explaining the working of project https://drive.google.com/file/d/1I1inlMLmL209jBmnSU2YSUWDO-9yyb4e/view?usp=sharing
 2. Embed video of project demo https://drive.google.com/file/d/1meEcKHJrFehB7mcEO1kN_huka0x9Qyen/view?usp=sharing
