@@ -1,7 +1,8 @@
 # buildfromhome
 ![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 
-The Hanger is a fashion shopping app. I used Razorpay to integrate payment within the app, Firebase for user authentication and Firestore for reading and writing the data for the shopping cart.i used FontAwesomeIcons (For some of the icons) and darkerGrotesque for the font. At the welcome screen user gets two options, either to register or login, after doing any of the two, user is redirected to a homescreen containing some products, there are three categories of products to choose from, there is a separate details page for each product which can be viewed by clicking on each product. At the details page user can either bookmark/add to cart or pay for the product, Cash on delivery option is also available. There is a profile sectiion too which redirects to users prefered pages.
+The Hanger is a fashion shopping app. I used Razorpay to integrate payment within the app, Firebase for user authentication and Firestore for reading and writing the data for the shopping cart.
+The home screen ui is inspired from Vlada's redesign concept for Anthropologie.i used FontAwesomeIcons (For some of the icons) and darkerGrotesque for the font. At the welcome screen user gets two options, either to register or login, after doing any of the two, user is redirected to a homescreen containing some products, there are three categories of products to choose from, there is a separate details page for each product which can be viewed by clicking on each product. At the details page user can either bookmark/add to cart or pay for the product, Cash on delivery option is also available. There is a profile sectiion too which redirects to users prefered pages.
 
 ## Team members
 1. Adam Oommen Jacob [https://github.com/weberstills]
