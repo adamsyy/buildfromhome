@@ -6,7 +6,7 @@ The home screen ui is inspired from Vlada's redesign concept for Anthropologie(c
 
 ## Team members
 1. Adam Oommen Jacob [https://github.com/weberstills]
-2. Mohammad Salman Alipary [https://github.com/salmanpary]
+2. Mohammad Salman Ali pary(Mr Pewer) [https://github.com/salmanpary]
 3. Sreejith Ks [https://github.com/sreejxth69]
 ## Team Id
 BFH/rec9jRv7kQ6HUshJ0/2021
